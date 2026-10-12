@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KHAFAIA | خَفايا</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#163D32;--sand:#E9DFC9;--palm:#829477;--ivory:#F8F6F0;--charcoal:#202822;--copper:#B77745;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--ivory);color:var(--charcoal);font:400 16px/1.7 "IBM Plex Sans Arabic",Inter,system-ui,sans-serif}
+[lang=en] body{font-family:Inter,"IBM Plex Sans Arabic",system-ui,sans-serif;line-height:1.55}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:var(--forest);color:var(--ivory);padding:20px 14px;display:flex;flex-direction:column;gap:6px}
+.brand{font-weight:700;font-size:20px;padding:4px 10px 14px;border-bottom:3px solid var(--copper);margin-bottom:8px}
+aside h3{font-size:13px;font-weight:500;color:var(--sand);margin:14px 10px 2px}
+aside a{display:block;color:var(--ivory);text-decoration:none;padding:9px 12px;border-radius:8px;border-inline-start:3px solid transparent}
+aside a:hover{background:rgba(248,246,240,.1)}
+aside a[aria-current=page]{background:rgba(248,246,240,.16);border-inline-start-color:var(--copper);font-weight:700}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+aside a:focus-visible{outline-color:var(--sand)}
+main{padding:28px clamp(16px,4vw,44px);max-width:1100px;width:100%}
+.top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+h1{font-size:28px;line-height:1.3;margin:0;color:var(--forest)}
+h2{font-size:19px;margin:0 0 8px;color:var(--forest)}
+.bar{display:flex;gap:8px;flex-wrap:wrap}
+button,select,input{font:inherit}
+.btn{background:var(--forest);color:var(--ivory);border:2px solid var(--forest);border-radius:10px;padding:8px 16px;cursor:pointer;min-height:44px}
+.btn:hover{background:#0f2e25}
+.btn.alt{background:var(--ivory);color:var(--forest)}
+.btn.alt:hover{background:var(--sand)}
+.btn[aria-pressed=true]{background:var(--sand);color:var(--forest)}
+.demo{background:var(--sand);color:var(--forest);border-inline-start:6px solid var(--copper);padding:10px 14px;border-radius:8px;margin-bottom:18px;font-weight:500}
+.card{background:#fff;border:1px solid rgba(130,148,119,.55);border-radius:14px;padding:18px;box-shadow:0 1px 3px rgba(22,61,50,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:18px}
+.stat b{display:block;font-size:30px;color:var(--forest);line-height:1.2}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border:1px solid rgba(130,148,119,.55);border-radius:14px;padding:16px}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--forest);color:var(--ivory);font-weight:700;margin-bottom:6px}
+.steps a{color:var(--forest);font-weight:700}
+label{display:block;font-weight:500;margin:12px 0 4px;color:var(--forest)}
+input,select{width:100%;max-width:420px;padding:9px 12px;border:1.5px solid var(--palm);border-radius:8px;background:#fff;color:var(--charcoal);min-height:44px}
+input:disabled{background:var(--ivory);opacity:.6}
+.ck{display:flex;gap:8px;align-items:center}
+input[type=checkbox]{width:22px;height:22px;min-height:22px;accent-color:var(--forest)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 16px}
+.fg input,.fg select{max-width:100%}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{text-align:start;padding:10px 12px;border-bottom:1px solid rgba(130,148,119,.45)}
+th{background:var(--sand);color:var(--forest)}
+.tag{display:inline-block;background:var(--sand);color:var(--forest);padding:2px 10px;border-radius:99px;font-weight:500}
+.res{border-inline-start:6px solid var(--copper);margin-top:16px}
+.dir{display:inline-block}[dir=rtl] .dir{transform:scaleX(-1)}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--sand);border-radius:12px;padding:14px;color:var(--forest)}
+.tile b{font-size:22px;display:block}
+.hero{background:var(--forest);color:var(--ivory);border-radius:16px;padding:22px;margin-bottom:18px}
+.hero p{margin:6px 0}.tg{color:var(--sand);font-weight:700;font-size:18px}
+.ico{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ico div{background:rgba(248,246,240,.12);border-radius:12px;padding:10px;text-align:center;min-width:92px;font-size:13px}
+.ico svg{width:44px;height:44px;stroke:var(--sand);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;display:block;margin:0 auto 4px}
+.menu{display:none}
+.note{color:var(--charcoal);font-size:14px}
+@media(max-width:768px){.app{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;align-items:center}aside nav{display:none;width:100%}aside.open nav{display:block}.menu{display:inline-block;margin-inline-start:auto}.brand{border:0;padding:0;margin:0}}
+@media(prefers-reduced-motion:no-preference){.card,.steps li{transition:box-shadow .15s}.card:hover{box-shadow:0 4px 12px rgba(22,61,50,.14)}}
+</style></head>
+<body><div class="app" id="app"></div>
+<script>
+const T={
+brand:["KHAFAIA | خَفايا","KHAFAIA | خَفايا"],g1:["Workspace","مساحة العمل"],g2:["Management","الإدارة"],g3:["System","النظام"],
+ov:["Overview","نظرة عامة"],an:["Opportunity analyzer","محلل الفرص"],mk:["Marketplace","السوق"],fe:["Feasibility","الجدوى"],mp:["Resource map","خريطة الموارد"],ad:["Admin review","مراجعة الإدارة"],bm:["Business model","نموذج العمل"],au:["Log in / Sign up","دخول / حساب جديد"],
+demoOn:["Demo mode on","وضع العرض مفعّل"],demoOff:["Demo mode off","وضع العرض متوقف"],
+banner:["Demo data: every record is a fictional sample. No real suppliers, tests, partnerships or prices.","بيانات تجريبية: كل سجل هنا عيّنة خيالية. لا موردون ولا فحوص ولا شراكات ولا أسعار حقيقية."],
+lang:["العربية","English"],menu:["Menu","القائمة"],
+tag:["Discover the value hidden in every palm.","اكتشف القيمة المخفية في كل نخلة"],
+ovT:["From Palm Waste to New Possibilities.","من مخلفات النخيل إلى فرص جديدة"],
+ovS:["KHAFAIA connects palm-waste suppliers with businesses and innovators to discover potential applications, reduce underutilized biomass, and develop new commercial opportunities.","تربط خَفايا موردي مخلفات النخيل بالشركات والمبتكرين لاكتشاف تطبيقات محتملة، وتقليل الكتلة الحيوية غير المستغلة، وتطوير فرص تجارية جديدة."],
+s1:["Listings","عروض وطلبات"],s2:["Suggested matches","مطابقات مقترحة"],s3:["Palm categories in demo","فئات نخيل في العيّنة"],s4:["Regions","المناطق"],
+cats:["Palm-waste categories","فئات مخلفات النخيل"],wf:["How it works","كيف تعمل"],open:["Open","افتح"],
+w1:["Describe your palm waste in the analyzer.","صِف مخلفات النخيل في المحلل."],w2:["See possible buyers in the marketplace.","اطّلع على مشترين محتملين في السوق."],w3:["Test the numbers in the feasibility tool.","اختبر الأرقام في أداة الجدوى."],w4:["Submit it for admin review.","قدّمه لمراجعة الإدارة."],
+anT:["Opportunity analyzer","محلل الفرص"],anS:["Describe the material in three short steps. You get research directions, not verified advice.","صِف المادة في ثلاث خطوات قصيرة. ستحصل على اتجاهات للبحث وليس نصيحة مؤكدة."],
+st1:["Material","المادة"],st2:["Quantity and place","الكمية والموقع"],st3:["Handling and scale","المعالجة والحجم"],
+fCat:["Palm-waste category","فئة مخلفات النخيل"],fSp:["Palm species (optional)","نوع النخيل (اختياري)"],fForm:["Material state","حالة المادة"],fMo:["Moisture, if known","الرطوبة، إن عُرفت"],fQ:["Available quantity","الكمية المتاحة"],fU:["Unit","الوحدة"],fR:["Location in Oman","الموقع في عُمان"],fDis:["Current handling","طريقة التعامل الحالية"],fEq:["Existing equipment","المعدات المتوفرة"],fSc:["Intended scale","الحجم المقصود"],
+next:["Next","التالي"],back:["Back","السابق"],done:["Show directions","اعرض الاتجاهات"],again:["Start again","ابدأ من جديد"],stepOf:["Step {a} of 3","الخطوة {a} من 3"],
+dirs:["Research directions","اتجاهات للبحث"],ruleNote:["Demo recommendations from predefined rules, not a live AI. These are directions to investigate, not proven or guaranteed uses.","توصيات تجريبية من قواعد محددة مسبقًا وليست من ذكاء اصطناعي حي. هي اتجاهات للبحث وليست استخدامات مثبتة أو مضمونة."],
+chk:["What to check","ما يجب التحقق منه"],notes:["Notes for your material","ملاحظات لمادتك"],
+n_wet:["Fresh or wet material usually needs drying before storage or processing.","المادة الطازجة أو الرطبة تحتاج عادةً إلى تجفيف قبل التخزين أو المعالجة."],
+n_mix:["Mixed material needs sorting first; suitability differs by palm part.","المادة المختلطة تحتاج إلى فرز أولًا؛ فالملاءمة تختلف حسب جزء النخلة."],
+n_proc:["Processed material: confirm what was added or removed during processing.","مادة مُعالجة: تأكد مما أُضيف أو أُزيل أثناء المعالجة."],
+n_sp:["Properties can differ by species; test your species rather than assuming.","قد تختلف الخصائص حسب النوع؛ اختبر نوعك ولا تفترض."],
+n_nosp:["Species unknown: identify it before testing, as properties may differ.","النوع غير معروف: حدّده قبل الفحص فقد تختلف الخصائص."],
+n_eq:["No equipment listed: budget for a shredder, dryer or baler as the product needs.","لا معدات مذكورة: خصّص ميزانية لآلة تقطيع أو مجفف أو كبس حسب المنتج."],
+n_pil:["Start with a small pilot batch and lab testing before committing.","ابدأ بدفعة تجريبية صغيرة وفحص مخبري قبل الالتزام."],
+n_com:["Commercial scale: confirm steady supply and buyer demand first.","حجم تجاري: تأكد من استمرار التوريد وطلب المشترين أولًا."],
+n_small:["Small volume: better suited to pilots or craft than industrial uses.","كمية صغيرة: أنسب للتجارب أو الحِرف منها للاستخدامات الصناعية."],
+mkT:["Marketplace","السوق"],mkS:["Suppliers list palm waste; buyers say what they need. Matches are suggestions only: nothing here has been tested or accepted by a buyer.","يعرض الموردون مخلفات النخيل ويحدد المشترون احتياجهم. المطابقات اقتراحات فقط: لم يُختبر شيء هنا ولم يوافق عليه أي مشترٍ."],
+all:["All","الكل"],sup:["Supply","عرض"],dem:["Wanted","طلب"],allc:["All categories","كل الفئات"],
+item:["Category","الفئة"],type:["Type","النوع"],spc:["Species","نوع النخلة"],qty:["Quantity","الكمية"],region:["Region","المنطقة"],mo:["Moisture","الرطوبة"],av:["Availability","التوفر"],pr:["Preparation","التجهيز"],ap:["Intended use","الاستخدام المقصود"],vs:["Status","الحالة"],
+vst:["Demo, unverified","تجريبي، غير موثّق"],none:["Not specified","غير محدد"],
+mt:["Suggested matches","المطابقات المقترحة"],mnote:["Suggestion only: not tested, and not accepted by any buyer.","اقتراح فقط: لم يُختبر ولم يوافق عليه أي مشترٍ."],nomt:["No matches in current data.","لا مطابقات في البيانات الحالية."],
+rc:["Same palm-waste category","فئة مخلفات النخيل نفسها"],rr:["Related palm part (test before assuming it is equivalent)","جزء نخيل قريب (اختبره ولا تفترض تكافؤه)"],rm:["Mixed biomass: sorting is needed first","كتلة مختلطة: يلزم الفرز أولًا"],
+rq1:["Supply covers the requested quantity","العرض يغطي الكمية المطلوبة"],rq2:["Supply covers about {p}% of the requested quantity","العرض يغطي نحو {p}% من الكمية المطلوبة"],
+rg1:["Same region","المنطقة نفسها"],rg2:["Different regions: transport cost applies","منطقتان مختلفتان: تُضاف تكلفة النقل"],
+rd1:["Material is low-moisture, as the buyer needs","المادة منخفضة الرطوبة كما يطلب المشتري"],rd2:["Moisture differs from the buyer's need: drying may be required","الرطوبة تختلف عن طلب المشتري: قد يلزم التجفيف"],ra:["Both name the same intended use","كلاهما يذكر الاستخدام المقصود نفسه"],
+feT:["Feasibility calculator","حاسبة الجدوى"],feS:["Pick only the steps your product needs. Every number is an illustrative assumption to replace, not verified market data. Changing the category loads a typical set of steps.","اختر الخطوات التي يحتاجها منتجك فقط. كل رقم افتراض توضيحي يجب استبداله وليس بيانات سوق موثقة. تغيير الفئة يحمّل مجموعة خطوات معتادة."],
+fIn:["Input per month (tonnes)","المدخلات شهريًا (أطنان)"],fY:["Saleable output yield (%)","نسبة المنتج القابل للبيع (%)"],fP:["Selling price per tonne of output (OMR, placeholder)","سعر بيع طن المنتج (ر.ع.، قيمة افتراضية)"],
+stepsT:["Steps that apply (OMR per tonne of input)","الخطوات المطبقة (ر.ع. لكل طن مدخلات)"],collect:["Collection","الجمع"],sortS:["Sorting","الفرز"],trans:["Transport","النقل"],dryS:["Drying","التجفيف"],cut:["Cutting","القص"],shred:["Shredding","التقطيع"],proc:["Processing","المعالجة"],
+fixed:["Monthly fixed costs (OMR)","التكاليف الثابتة شهريًا (ر.ع.)"],eqp:["Equipment","المعدات"],lab:["Labor","العمالة"],oth:["Other","أخرى"],
+outT:["Saleable output","المنتج القابل للبيع"],rev:["Revenue","الإيراد"],cost:["Total costs","إجمالي التكاليف"],net:["Net per month","الصافي شهريًا"],yr:["Net per year","الصافي سنويًا"],mg:["Margin","الهامش"],be:["Break-even price per tonne of output","سعر التعادل لطن المنتج"],tn:["t","طن"],
+formula:["Illustrative model: net = output × price − input × applied step costs − fixed costs.","نموذج توضيحي: الصافي = المنتج × السعر − المدخلات × تكاليف الخطوات المطبقة − التكاليف الثابتة."],
+mpT:["Resource map","خريطة الموارد"],mpS:["A diagram by region, not a geographic map. Counts come from the demo records.","مخطط للمناطق وليس خريطة جغرافية. الأعداد من السجلات التجريبية."],lst:["records","سجلات"],
+adT:["Admin review","مراجعة الإدارة"],adS:["Approve, reject or request changes for each supply listing. Verification is simulated.","وافق أو ارفض أو اطلب تعديلات على كل عرض. التوثيق هنا محاكاة."],act:["Action","الإجراء"],
+pending:["✎ Pending","✎ قيد المراجعة"],approved:["✓ Approved","✓ مقبول"],rejected:["✕ Rejected","✕ مرفوض"],changes:["↺ Changes requested","↺ مطلوب تعديل"],ap1:["Approve","قبول"],rj:["Reject","رفض"],ch:["Request changes","طلب تعديل"],
+bmT:["Business model","نموذج العمل"],bmS:["A proposed model. Every figure here is an assumption to test, not a result.","نموذج مقترح. كل رقم هنا افتراض يحتاج اختبارًا وليس نتيجة."],
+b1:["Who uses it","من يستخدمه"],b1t:["Suppliers list palm waste of any type; manufacturers, researchers and entrepreneurs look for biomass to work with.","يعرض الموردون مخلفات النخيل بكل أنواعها؛ ويبحث المصنّعون والباحثون ورواد الأعمال عن كتلة حيوية للعمل بها."],
+b2:["How it might earn","كيف قد يربح"],b2t:["A small commission on deals through the platform and paid feasibility reports. Rates are not set.","عمولة صغيرة على الصفقات عبر المنصة وتقارير جدوى مدفوعة. النسب لم تُحدَّد."],
+b3:["What must be proven","ما يجب إثباته"],b3t:["That suppliers list, buyers respond, and each palm material's uses hold up in real tests.","أن يعرض الموردون، وأن يستجيب المشترون، وأن تصمد استخدامات كل مادة نخيل في فحوص حقيقية."],
+auT:["Log in or sign up","تسجيل الدخول أو إنشاء حساب"],li:["Log in","دخول"],su:["Sign up","حساب جديد"],em:["Email","البريد الإلكتروني"],pw:["Password","كلمة المرور"],nm:["Full name","الاسم الكامل"],go:["Continue","متابعة"],authNote:["Interface demo only. Nothing is sent or stored.","عرض تجريبي للواجهة فقط. لا يُرسل ولا يُخزَّن شيء."],authOk:["Demo only: you would be signed in now.","تجريبي فقط: كنت ستُسجَّل الدخول الآن."]};
+const CAT={fr:["Palm fronds and leaves","سعف وأوراق النخيل"],lf:["Palm leaflets","وريقات النخيل"],rx:["Palm rachis and midribs","عسيب وعروق السعف"],sh:["Palm leaf sheaths and fibers","أغمدة وألياف النخيل"],tr:["Palm trunks and stems","جذوع وسيقان النخيل"],pt:["Palm petioles and stalks","أعناق وسيقان السعف"],pr:["Palm pruning residues","مخلفات تقليم النخيل"],pp:["Palm processing residues","مخلفات معالجة النخيل"],mx:["Mixed palm biomass","كتلة نخيل حيوية مختلطة"],ot:["Other palm waste","مخلفات نخيل أخرى"]};
+const IDEA={fiber:["Fiber-based products","منتجات ليفية"],pack:["Packaging materials","مواد تغليف"],mulch:["Mulch and soil applications","غطاء تربة وتطبيقات التربة"],energy:["Biomass and energy","كتلة حيوية وطاقة"],comp:["Composite materials","مواد مركبة"],craft:["Craft and design products","منتجات حِرفية وتصميم"]};
+const NEED={fiber:["Needs cleaning, separation and fiber extraction; test fiber strength and consistency.","يحتاج تنظيفًا وفصلًا واستخلاص الألياف؛ افحص متانة الألياف وثباتها."],pack:["Needs sorting and forming or pressing equipment; check safety before any food-contact use.","يحتاج فرزًا ومعدات تشكيل أو كبس؛ تحقق من السلامة قبل أي ملامسة للغذاء."],mulch:["Needs shredding, often composting; check pests, plant disease, salinity and contamination.","يحتاج تقطيعًا وغالبًا تخميرًا؛ تحقق من الآفات وأمراض النبات والملوحة والتلوث."],energy:["Needs drying and sizing; check moisture, ash and emission rules before burning or pelletizing.","يحتاج تجفيفًا وتحجيمًا؛ تحقق من الرطوبة والرماد واشتراطات الانبعاثات."],comp:["Needs sizing, a binder and a press; mechanical and moisture testing are required.","يحتاج تحجيمًا ومادة رابطة ومكبسًا؛ يلزم اختبار ميكانيكي واختبار رطوبة."],craft:["Needs sorting, cutting and mostly manual work; small scale, and demand must be tested.","يحتاج فرزًا وقصًا وعملًا يدويًا غالبًا؛ حجم صغير ويلزم اختبار الطلب."]};
+const RULE={fr:["craft","mulch","fiber","energy"],lf:["craft","pack","mulch"],rx:["comp","craft","energy"],sh:["fiber","comp","pack"],tr:["comp","energy","craft"],pt:["comp","fiber","energy"],pr:["mulch","energy","comp"],pp:["mulch","energy","fiber"],mx:["mulch","energy"],ot:["mulch"]};
+const GRP={fr:"f",lf:"f",rx:"f",pt:"f",sh:"b",pp:"b",tr:"w",pr:"w"};
+const SP={date:["Date palm","نخيل التمر"],coco:["Coconut palm","جوز الهند"]};
+const O={form:{fresh:["Fresh","طازجة"],dry:["Dry","جافة"],mixed:["Mixed","مختلطة"],processed:["Processed","مُعالجة"]},mo:{unk:["Unknown","غير معروفة"],low:["Low","منخفضة"],mid:["Medium","متوسطة"],high:["High","عالية"]},u:{kg:["kg","كغ"],t:["tonne","طن"]},dis:{burn:["Burned","تُحرق"],land:["Dumped or landfilled","تُلقى في مكب"],site:["Left on site","تُترك في الموقع"],give:["Given away","تُعطى مجانًا"],unk:["Not sure","غير متأكد"]},eq:{none:["None","لا شيء"],shred:["Shredder","آلة تقطيع"],dry:["Dryer","مجفف"],bale:["Baler","آلة كبس"],multi:["Several","عدة معدات"]},sc:{pilot:["Pilot or test batch","تجربة صغيرة"],small:["Small business","مشروع صغير"],comm:["Commercial","تجاري"]},av:{now:["Available now","متاح الآن"],seas:["Seasonal","موسمي"],mon:["Monthly","شهري"]},pr:{raw:["Raw","خام"],sort:["Sorted","مفروز"],shred:["Shredded","مقطّع"],bale:["Baled","مكبوس"]}};
+const RG={muscat:["Muscat","مسقط"],batinah:["Al Batinah","الباطنة"],dakh:["Ad Dakhiliyah","الداخلية"],sharq:["Al Sharqiyah","الشرقية"],dhofar:["Dhofar","ظفار"],wusta:["Al Wusta","الوسطى"]};
+const SAMPLE=[
+{id:"S1",t:"sup",c:"fr",sp:"date",q:30,u:"t",r:"batinah",mo:"low",av:"mon",pr:"raw",ap:"mulch"},
+{id:"S2",t:"sup",c:"lf",sp:"date",q:8,u:"t",r:"dakh",mo:"low",av:"seas",pr:"sort",ap:"craft"},
+{id:"S3",t:"sup",c:"sh",sp:"",q:5000,u:"kg",r:"sharq",mo:"low",av:"now",pr:"sort",ap:"fiber"},
+{id:"S4",t:"sup",c:"tr",sp:"date",q:40,u:"t",r:"muscat",mo:"mid",av:"now",pr:"raw",ap:"comp"},
+{id:"S5",t:"sup",c:"pr",sp:"coco",q:15,u:"t",r:"dhofar",mo:"high",av:"mon",pr:"raw",ap:"energy"},
+{id:"S6",t:"sup",c:"mx",sp:"",q:20,u:"t",r:"muscat",mo:"unk",av:"now",pr:"raw",ap:"mulch"},
+{id:"D1",t:"dem",c:"fr",sp:"",q:20,u:"t",r:"muscat",mo:"low",av:"mon",pr:"shred",ap:"mulch"},
+{id:"D2",t:"dem",c:"sh",sp:"",q:3,u:"t",r:"muscat",mo:"low",av:"mon",pr:"sort",ap:"fiber"},
+{id:"D3",t:"dem",c:"mx",sp:"",q:25,u:"t",r:"batinah",mo:"low",av:"mon",pr:"shred",ap:"energy"},
+{id:"D4",t:"dem",c:"tr",sp:"",q:30,u:"t",r:"dakh",mo:"low",av:"now",pr:"raw",ap:"comp"}];
+const PRE={fr:["collect","trans","shred"],lf:["collect","sortS","cut"],rx:["collect","trans","cut","shred"],sh:["collect","sortS","proc"],tr:["collect","trans","cut","shred","dryS"],pt:["collect","trans","cut"],pr:["collect","trans","shred","dryS"],pp:["collect","sortS","proc"],mx:["collect","sortS","trans","shred"],ot:["collect","sortS"]};
+const DEF=()=>({cat:"fr",sp:"",form:"dry",mo:"unk",q:"",u:"t",r:"muscat",dis:"unk",eq:"none",sc:"pilot",done:false});
+const S={lang:"ar",page:"ov",demo:true,step:1,an:DEF(),filter:"all",fcat:"all",fe:{cat:"fr",q:20,y:80,p:45,on:{collect:1,trans:1,shred:1},c:{collect:4,sortS:3,trans:3.5,dryS:2,cut:3,shred:4,proc:10},eqp:150,lab:300,oth:50},ad:{},auth:"li",authDone:false,menu:false};
+const l=o=>o[S.lang==="ar"?1:0],t=k=>l(T[k]);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const omr=v=>new Intl.NumberFormat(S.lang==="ar"?"ar-OM-u-nu-latn":"en-OM",{minimumFractionDigits:3,maximumFractionDigits:3}).format(v)+(S.lang==="ar"?" ر.ع.":" OMR");
+const num=v=>new Intl.NumberFormat(S.lang==="ar"?"ar-OM-u-nu-latn":"en-OM",{maximumFractionDigits:2}).format(v);
+const opts=(d,s)=>Object.keys(d).map(k=>`<option value="${k}" ${k===s?"selected":""}>${l(d[k])}</option>`).join("");
+const rows=()=>S.demo?SAMPLE:[];
+const tn=x=>x.u==="kg"?x.q/1000:x.q;
+const spn=x=>x.sp?l(SP[x.sp]):t("none");
+const ICO={fr:'<path d="M24 44V8M24 14L12 8M24 14l12-6M24 22L10 15M24 22l14-7M24 30L12 24M24 30l12-6"/>',lf:'<path d="M8 36C8 18 20 10 38 10 38 28 28 38 8 36zM8 36L28 18"/>',sh:'<path d="M12 6c8 10-8 14 0 24s-4 12 0 12M24 6c8 10-8 14 0 24s-4 12 0 12M36 6c8 10-8 14 0 24s-4 12 0 12"/>',tr:'<path d="M16 6h16v36H16zM16 16h16M16 26h16M16 36h16"/>',pr:'<path d="M8 40L38 10M10 14l30 24M30 10h8v8"/>'};
+function matches(){const r=rows(),o=[];r.filter(x=>x.t==="sup").forEach(s=>r.filter(x=>x.t==="dem").forEach(d=>{
+const why=[];if(s.c===d.c)why.push(t("rc"));else if(s.c==="mx"||d.c==="mx")why.push(t("rm"));else if(GRP[s.c]&&GRP[s.c]===GRP[d.c])why.push(t("rr"));if(!why.length)return;
+const p=Math.round(Math.min(1,tn(s)/tn(d))*100);why.push(p>=100?t("rq1"):t("rq2").replace("{p}",p));why.push(s.r===d.r?t("rg1"):t("rg2"));why.push(s.mo==="low"?t("rd1"):t("rd2"));if(s.ap===d.ap)why.push(t("ra"));o.push({s,d,why})}));return o}
+const V={
+ov(){const r=rows(),st=[[t("s1"),r.length],[t("s2"),matches().length],[t("s3"),new Set(r.map(x=>x.c)).size],[t("s4"),new Set(r.map(x=>x.r)).size]];
+return `<div class="hero"><p class="tg">${t("tag")}</p><p>${t("ovS")}</p><div class="ico">${["fr","lf","sh","tr","pr"].map(k=>`<div><svg viewBox="0 0 48 48" aria-hidden="true">${ICO[k]}</svg>${l(CAT[k])}</div>`).join("")}</div></div>
+<div class="grid">${st.map(s=>`<div class="card stat"><b><bdi>${num(s[1])}</bdi></b><span>${s[0]}</span></div>`).join("")}</div>
+<h2>${t("cats")}</h2><p class="bar">${Object.keys(CAT).map(k=>`<span class="tag">${l(CAT[k])}</span>`).join("")}</p>
+<h2>${t("wf")}</h2><ol class="steps">${[["w1","an"],["w2","mk"],["w3","fe"],["w4","ad"]].map(w=>`<li><p>${t(w[0])}</p><a href="#${w[1]}">${t("open")} <span class="dir">›</span></a></li>`).join("")}</ol>`},
+an(){const a=S.an,F=(id,lb,c)=>`<div><label for="${id}">${t(lb)}</label>${c}</div>`;
+if(a.done){const tq=(parseFloat(a.q)||0)*(a.u==="kg"?.001:1),n=[];if(a.form==="fresh"||a.mo==="high")n.push("n_wet");if(a.form==="mixed"||a.cat==="mx")n.push("n_mix");if(a.form==="processed")n.push("n_proc");n.push(a.sp.trim()?"n_sp":"n_nosp");if(a.eq==="none")n.push("n_eq");if(a.sc==="pilot")n.push("n_pil");if(a.sc==="comm")n.push("n_com");if(tq&&tq<2)n.push("n_small");
+return `<div class="card"><h2>${t("dirs")}: ${l(CAT[a.cat])}</h2><p class="note">${a.sp.trim()?esc(a.sp)+" · ":""}<bdi>${num(parseFloat(a.q)||0)}</bdi> ${l(O.u[a.u])} · ${l(RG[a.r])} · ${l(O.form[a.form])} · ${l(O.dis[a.dis])}</p><p class="demo">${t("ruleNote")}</p>
+<ul>${RULE[a.cat].map(i=>`<li><b>${l(IDEA[i])}</b><br><span class="note">${t("chk")}: ${l(NEED[i])}</span></li>`).join("")}</ul><h2>${t("notes")}</h2><ul>${n.map(k=>`<li>${t(k)}</li>`).join("")}</ul><button class="btn alt" data-a="reset">${t("again")}</button></div>`}
+const f=S.step===1?F("a1","fCat",`<select id="a1" data-an="cat">${opts(CAT,a.cat)}</select>`)+F("a2","fSp",`<input id="a2" data-an="sp" list="spl" dir="auto" value="${esc(a.sp)}"><datalist id="spl"><option value="${SP.date[S.lang==="ar"?1:0]}"><option value="${SP.coco[S.lang==="ar"?1:0]}"></datalist>`)+F("a3","fForm",`<select id="a3" data-an="form">${opts(O.form,a.form)}</select>`)+F("a4","fMo",`<select id="a4" data-an="mo">${opts(O.mo,a.mo)}</select>`)
+:S.step===2?F("a5","fQ",`<input id="a5" data-an="q" type="number" min="0" step="any" dir="ltr" value="${esc(a.q)}">`)+F("a6","fU",`<select id="a6" data-an="u">${opts(O.u,a.u)}</select>`)+F("a7","fR",`<select id="a7" data-an="r">${opts(RG,a.r)}</select>`)
+:F("a8","fDis",`<select id="a8" data-an="dis">${opts(O.dis,a.dis)}</select>`)+F("a9","fEq",`<select id="a9" data-an="eq">${opts(O.eq,a.eq)}</select>`)+F("a10","fSc",`<select id="a10" data-an="sc">${opts(O.sc,a.sc)}</select>`);
+return `<p>${t("anS")}</p><div class="card"><p class="note">${t("stepOf").replace("{a}",S.step)} · ${t("st"+S.step)}</p><div class="fg">${f}</div><p class="bar" style="margin-top:16px">${S.step>1?`<button class="btn alt" data-a="back"><span class="dir">‹</span> ${t("back")}</button>`:""}<button class="btn" data-a="next">${S.step<3?t("next"):t("done")} ${S.step<3?'<span class="dir">›</span>':""}</button></p></div>`},
+mk(){const r=rows().filter(x=>(S.filter==="all"||x.t===S.filter)&&(S.fcat==="all"||x.c===S.fcat)),m=matches();
+return `<p>${t("mkS")}</p><div class="bar" role="group">${["all","sup","dem"].map(f=>`<button class="btn alt" data-f="${f}" aria-pressed="${S.filter===f}">${t(f)}</button>`).join("")}<select id="fc" data-fc aria-label="${t("item")}" style="width:auto"><option value="all">${t("allc")}</option>${opts(CAT,S.fcat)}</select></div>
+<div class="card tw" style="margin-top:14px">${r.length?`<table><thead><tr>${["type","item","spc","qty","region","mo","av","pr","ap","vs"].map(k=>`<th>${t(k)}</th>`).join("")}</tr></thead><tbody>${r.map(x=>`<tr><td><span class="tag">${x.id} · ${t(x.t)}</span></td><td>${l(CAT[x.c])}</td><td>${spn(x)}</td><td><bdi>${num(x.q)} ${l(O.u[x.u])}</bdi></td><td>${l(RG[x.r])}</td><td>${l(O.mo[x.mo])}</td><td>${l(O.av[x.av])}</td><td>${l(O.pr[x.pr])}</td><td>${l(IDEA[x.ap])}</td><td>${t("vst")}</td></tr>`).join("")}</tbody></table>`:`<p>${t("banner")}</p>`}</div>
+<h2 style="margin-top:20px">${t("mt")}</h2>${m.length?m.map(x=>`<div class="card" style="margin-bottom:10px"><b><bdi>${x.s.id}</bdi> ${l(CAT[x.s.c])} <span class="dir">›</span> <bdi>${x.d.id}</bdi> ${l(CAT[x.d.c])}</b><ul>${x.why.map(w=>`<li>${w}</li>`).join("")}</ul><p class="note">${t("mnote")}</p></div>`).join(""):`<p>${t("nomt")}</p>`}`},
+fe(){const f=S.fe,inp=(k,id,lb,v)=>`<div><label for="${id}">${lb}</label><input id="${id}" data-fe="${k}" type="number" min="0" step="any" dir="ltr" value="${v}"></div>`;
+return `<p>${t("feS")}</p><div class="card"><div class="fg"><div><label for="fcat">${t("fCat")}</label><select id="fcat" data-fe="cat">${opts(CAT,f.cat)}</select></div>${inp("q","fq",t("fIn"),f.q)}${inp("y","fy",t("fY"),f.y)}${inp("p","fp",t("fP"),f.p)}</div>
+<h2 style="margin-top:16px">${t("stepsT")}</h2><div class="fg">${Object.keys(f.c).map(k=>`<div><label class="ck"><input type="checkbox" id="on_${k}" data-fe="on.${k}" ${f.on[k]?"checked":""}>${t(k)}</label><input id="c_${k}" data-fe="c.${k}" aria-label="${t(k)}" type="number" min="0" step="any" dir="ltr" value="${f.c[k]}" ${f.on[k]?"":"disabled"}></div>`).join("")}</div>
+<h2 style="margin-top:16px">${t("fixed")}</h2><div class="fg">${inp("eqp","fe1",t("eqp"),f.eqp)}${inp("lab","fe2",t("lab"),f.lab)}${inp("oth","fe3",t("oth"),f.oth)}</div></div><div class="card res" id="res" aria-live="polite">${feRes()}</div>`},
+mp(){const r=rows();return `<p>${t("mpS")}</p><div class="map">${Object.keys(RG).map(k=>{const c=r.filter(x=>x.r===k).length;return `<div class="tile"><b><bdi>${num(c)}</bdi></b>${l(RG[k])}<br><span class="note">${t("lst")}</span></div>`}).join("")}</div>`},
+ad(){const r=rows().filter(x=>x.t==="sup");return `<p>${t("adS")}</p><div class="card tw">${r.length?`<table><thead><tr><th>${t("item")}</th><th>${t("region")}</th><th>${t("vs")}</th><th>${t("act")}</th></tr></thead><tbody>${r.map((x,i)=>`<tr><td><bdi>${x.id}</bdi> ${l(CAT[x.c])}</td><td>${l(RG[x.r])}</td><td>${t(S.ad[i]||"pending")}</td><td class="bar"><button class="btn alt" data-ad="${i}:approved">${t("ap1")}</button><button class="btn alt" data-ad="${i}:rejected">${t("rj")}</button><button class="btn alt" data-ad="${i}:changes">${t("ch")}</button></td></tr>`).join("")}</tbody></table>`:`<p>${t("banner")}</p>`}</div>`},
+bm(){return `<p>${t("bmS")}</p><div class="grid">${[1,2,3].map(i=>`<div class="card"><h2>${t("b"+i)}</h2><p>${t("b"+i+"t")}</p></div>`).join("")}</div>`},
+au(){const su=S.auth==="su";return `<div class="card" style="max-width:480px"><div class="bar" role="group"><button class="btn alt" data-au="li" aria-pressed="${!su}">${t("li")}</button><button class="btn alt" data-au="su" aria-pressed="${su}">${t("su")}</button></div>
+<div>${su?`<label for="nm">${t("nm")}</label><input id="nm" autocomplete="name" dir="auto">`:""}<label for="em">${t("em")}</label><input id="em" type="email" autocomplete="email" dir="ltr"><label for="pw">${t("pw")}</label><input id="pw" type="password" autocomplete="${su?"new-password":"current-password"}" dir="ltr">
+<p><button class="btn" data-a="auth">${t("go")}</button></p><p class="note" role="status">${S.authDone?t("authOk"):t("authNote")}</p></div></div>`}};
+function feRes(){const f=S.fe,vc=Object.keys(f.c).reduce((a,k)=>a+(f.on[k]?f.c[k]:0),0),out=f.q*f.y/100,rev=out*f.p,cost=f.q*vc+f.eqp+f.lab+f.oth,net=rev-cost;
+return `<h2>${t("net")}: <bdi>${omr(net)}</bdi></h2><p>${t("outT")}: <bdi>${num(out)} ${t("tn")}</bdi><br>${t("rev")}: <bdi>${omr(rev)}</bdi><br>${t("cost")}: <bdi>${omr(cost)}</bdi><br>${t("yr")}: <bdi>${omr(net*12)}</bdi><br>${t("mg")}: <bdi>${(rev?net/rev*100:0).toFixed(1)}%</bdi><br>${t("be")}: <bdi>${out?omr(cost/out):"—"}</bdi></p><p class="note">${t("formula")}</p>`}
+function render(){const L=S.lang;document.documentElement.lang=L;document.documentElement.dir=L==="ar"?"rtl":"ltr";
+const p=S.page;document.title=t(p==="ov"?"brand":p)+" | KHAFAIA";
+const head={ov:t("ovT"),an:t("anT"),mk:t("mkT"),fe:t("feT"),mp:t("mpT"),ad:t("adT"),bm:t("bmT"),au:t("auT")}[p];
+const NAV=[["g1",["ov","an","mk"]],["g2",["fe","mp","ad"]],["g3",["bm","au"]]];
+document.getElementById("app").innerHTML=`<aside class="${S.menu?"open":""}"><div class="brand">${t("brand")}</div><button class="btn alt menu" data-a="menu" aria-expanded="${S.menu}">${t("menu")}</button><nav aria-label="KHAFAIA">${NAV.map(g=>`<h3>${t(g[0])}</h3>${g[1].map(k=>`<a href="#${k}" ${k===p?'aria-current="page"':""}>${t(k)}</a>`).join("")}`).join("")}</nav></aside>
+<main><div class="top"><h1>${head}</h1><div class="bar"><button class="btn alt" data-a="demo" aria-pressed="${S.demo}">${S.demo?t("demoOn"):t("demoOff")}</button><button class="btn alt" data-a="lang" lang="${L==="ar"?"en":"ar"}">${t("lang")}</button></div></div>${S.demo?`<div class="demo" role="note">${t("banner")}</div>`:""}${V[p]()}</main>`}
+function go(){const h=location.hash.slice(1);S.page=V[h]?h:"ov";S.menu=false;render()}
+const sv=()=>document.querySelectorAll("[data-an]").forEach(x=>S.an[x.dataset.an]=x.value);
+addEventListener("hashchange",go);
+document.addEventListener("click",e=>{const b=e.target.closest("[data-a],[data-f],[data-ad],[data-au]");if(!b)return;const d=b.dataset;sv();
+if(d.a==="lang")S.lang=S.lang==="ar"?"en":"ar";
+else if(d.a==="demo")S.demo=!S.demo;
+else if(d.a==="menu")S.menu=!S.menu;
+else if(d.a==="next"){if(S.step===3)S.an.done=true;else S.step++}
+else if(d.a==="back")S.step--;
+else if(d.a==="reset"){S.step=1;S.an=DEF()}
+else if(d.a==="auth")S.authDone=true;
+else if(d.f)S.filter=d.f;
+else if(d.ad){const[i,v]=d.ad.split(":");S.ad[i]=v}
+else if(d.au){S.auth=d.au;S.authDone=false}
+render()});
+document.addEventListener("input",e=>{const el=e.target,d=el.dataset,k=d.fe;
+if(d.fc!==undefined){S.fcat=el.value}
+else if(k==="cat"){S.fe.cat=el.value;S.fe.on=Object.fromEntries(PRE[el.value].map(x=>[x,1]))}
+else if(k){const[a,b]=k.split("."),o=b?S.fe[a]:S.fe,kk=b||a,ck=el.type==="checkbox";o[kk]=ck?(el.checked?1:0):(parseFloat(el.value)||0);
+if(!ck){document.getElementById("res").innerHTML=feRes();return}}
+else return;
+const id=el.id;render();const n=document.getElementById(id);if(n)n.focus()});
+go();
+</script></body></html>
